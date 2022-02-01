@@ -30,6 +30,7 @@ window/stretch/aspect="keep"
 [global]
 
 android=false
+GLEs=true
 
 [importer_defaults]
 
