@@ -96,7 +96,14 @@ action = "ui_cancel"
 
 [node name="MobileControls" parent="." instance=ExtResource( 9 )]
 
-[node name="Sprite" parent="." instance=ExtResource( 1 )]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 0, 320 )
+
+[node name="Sprite" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource( 1 )]
+position = Vector2( 0, -320 )
 
 [connection signal="died" from="Player" to="." method="_on_Player_died"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
